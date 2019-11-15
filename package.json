@@ -1,0 +1,35 @@
+{
+  "name": "poem-page",
+  "version": "0.1.0",
+  "description": "A page for poems",
+  "repository": "https://github.com/kelly-keating/poem-page.git",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "nodemon server & webpack --watch",
+    "start": "node server"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "sqlite3": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "nodemon": "^1.18.11",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^4.3.1",
+    "superagent": "^4.1.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
