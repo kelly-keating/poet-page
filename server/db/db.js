@@ -5,6 +5,13 @@ function getAllPoems() {
     return db('Poems')
 }
 
+function getPoemById(id) {
+    return db('Poems')
+        .where('id', id)
+        .first()
+}
+
 module.exports = {
-    getAllPoems
+    getAllPoems,
+    getPoemById
 }

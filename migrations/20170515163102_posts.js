@@ -3,11 +3,11 @@ exports.up = (knex, Promise) => {
     table.increments().primary()
     table.string('title')
     table.string('author')
-    table.string('lines')
+    table.text('lines')
     table.integer('linecount')
   })
 }
 
 exports.down = (knex, Promise) => {
-  return knex.schema.dropTable('Posts')
+  return knex.schema.dropTable('Poems')
 }
