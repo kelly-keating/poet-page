@@ -4,26 +4,26 @@ import Header from './Header'
 import Footer from './Footer'
 import AppRoutes from './AppRoutes'
 
-import {getPosts} from '../api'
+import {getPoems} from '../api'
 
 class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      posts: [],
+      poems: [],
       errorMessage: ''
     }
-    this.fetchPosts = this.fetchPosts.bind(this)
+    this.fetchPoems = this.fetchPoems.bind(this)
   }
 
   componentDidMount () {
-    this.fetchPosts()
+    this.fetchPoems()
   }
 
-  fetchPosts () {
-    return getPosts()
-      .then(posts => {
-        this.setState({posts: posts})
+  fetchPoems () {
+    return getPoems()
+      .then(poems => {
+        this.setState({poems})
       })
       .catch(err => {
         this.setState({errorMessage: err.message})
@@ -37,10 +37,10 @@ class App extends React.Component {
           <Header />
         </div>
         <div className='content pure-u-1 pure-u-md-3-4'>
-          <AppRoutes
+          {/* <AppRoutes
             posts={this.state.posts}
-            fetchPosts={this.fetchPosts}
-          />
+            fetchPoems={this.fetchPoems}
+          /> */}
           {this.state.errorMessage &&
             <h1>{this.state.errorMessage}</h1>
           }
