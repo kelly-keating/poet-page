@@ -1,10 +1,11 @@
 import React from 'react'
 
 import Header from './Header'
+import Search from './Search'
 import Poems from './Poems'
 import FullPoem from './FullPoem'
 
-import {getPoems} from '../api'
+import {getPoems} from '../api/dbApi'
 
 class App extends React.Component {
   constructor (props) {
@@ -48,6 +49,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
+        <Search />
         <Poems poems={this.state.poems} clickFn={this.setActive} />
         {this.state.activePoem && <FullPoem poem={this.state.activePoem} closeFn={this.deactivate} />}
       </div>
