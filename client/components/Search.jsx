@@ -32,9 +32,10 @@ class Search extends React.Component {
     search(category) {
         searchByCategory(this.state.category, this.state.text)
             .then(results => {
-                if(results.status != 404) {
-                    this.setState({results})
+                if(results.status == 404) {
+                    results = []
                 }
+                this.setState({results})
             })
     }
 
