@@ -1,5 +1,7 @@
 import React from 'react'
 
+import SearchResults from './SearchResults'
+
 import {searchByCategory} from '../api/poetryApi'
 
 class Search extends React.Component {
@@ -35,7 +37,7 @@ class Search extends React.Component {
                 <input type="text" value={this.state.text} onChange={this.handleChange} />
                 <button onClick={() => this.search('author')}>Search Author</button>
                 <button onClick={() => this.search('title')}>Search Title</button>
-                {this.state.results.length && this.state.results.length + " things match"}
+                {this.state.results.length ? <SearchResults results={this.state.results} /> : null}
             </div>
         )
     }
