@@ -41,22 +41,22 @@ class Search extends React.Component {
 
     render() {
         const formStyle = {"color": "black"}
-        const dropdownStyle = {"max-width": "fit-content"}
+        const dropdownStyle = {"maxWidth": "fit-content"}
         return (
             <div style={formStyle}>
 
-                <div class="input-group">
-                    <select class="input-group-field" style={dropdownStyle} onChange={this.setCategory}>
+                <div className="input-group">
+                    <select className="input-group-field" style={dropdownStyle} onChange={this.setCategory}>
                         <option value="author">Search Author</option>
                         <option value="title">Search Title</option>
                         <option value="lines">Search Content</option>
                         {/* <option value="all">Search Everything</option> */}
                     </select>
 
-                    <input class="input-group-field" type="text" value={this.state.text} onChange={this.setText} />
+                    <input className="input-group-field" type="text" value={this.state.text} onChange={this.setText} />
                     
-                    <div class="input-group-button">
-                        <input type="submit" class="button" value="Search" onClick={this.search} />
+                    <div className="input-group-button">
+                        <input type="submit" className="button" value="Search" onClick={this.search} />
                     </div>
                 </ div>
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 import Header from './Header'
 import Search from './Search'
-import Poems from './Poems'
+import PoemList from './PoemList'
 import FullPoem from './FullPoem'
 
 import {getPoems} from '../api/dbApi'
@@ -50,7 +50,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Search />
-        <Poems poems={this.state.poems} clickFn={this.setActive} />
+        <PoemList poems={this.state.poems} clickFn={this.setActive} />
         {this.state.activePoem && <FullPoem poem={this.state.activePoem} closeFn={this.deactivate} />}
       </div>
     )
